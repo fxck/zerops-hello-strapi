@@ -13,16 +13,6 @@ project:
     - strapi
 
 services:
-  - hostname: db
-    type: postgresql@14
-    mode: NON_HA
-    priority: 10
-
-  - hostname: storage
-    type: object-storage
-    objectStorageSize: 2
-    priority: 10
-
   - hostname: prodapi
     type: nodejs@18
     buildFromGit: https://github.com/fxck/zerops-hello-strapi
@@ -92,4 +82,21 @@ services:
       minRam: 1
       maxRam: 1
     minContainers: 1
+
+  - hostname: db
+    type: postgresql@14
+    mode: NON_HA
+    priority: 10
+
+  - hostname: storage
+    type: object-storage
+    objectStorageSize: 2
+    priority: 10
+
+  - hostname: adminer
+    type: php-apache@8.0+2.4
+    buildFromGit: https://github.com/zeropsio/recipe-adminer@main
+    enableSubdomainAccess: true
+    minContainers: 1
+    maxContainers: 1
 ```
