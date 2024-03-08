@@ -1,0 +1,20 @@
+zerops:
+  - setup: prodapi
+    build:
+      base: nodejs@18
+      buildCommands:
+        - yarn
+        - yarn build
+      deploy:
+        - ./
+    run:
+      start: yarn start
+  - setup: devapi
+    build:
+      base: nodejs@18
+      buildCommands:
+        - yarn i
+      deploy:
+        - ./
+    run:
+      start: yarn develop
