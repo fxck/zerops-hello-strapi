@@ -37,6 +37,8 @@ zerops:
         - npm run strapi admin:create-user -- --firstname="$ADMIN_NAME" --lastname="$ADMIN_LASTNAME" --email="$ADMIN_MAIL" --password="$ADMIN_PASSWORD" 2>/dev/null || true
       deploy:
         - ./
+        - .git
+        - .gitignore
     run:
       prepareCommands:
         - git config --global --add safe.directory /var/www
