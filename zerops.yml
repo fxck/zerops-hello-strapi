@@ -43,7 +43,3 @@ zerops:
         - git config --global user.name "Aleš"
         - git config --global user.email "ales@zerops.io"
       start: yarn develop
-      healthCheck:
-        httpGet:
-          port: 1337
-          path: /_health
