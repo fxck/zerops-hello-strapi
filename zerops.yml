@@ -2,19 +2,38 @@ zerops:
   - setup: prodapi
     build:
       base: nodejs@18
+      prepareCommands:
+        - apt-get update && apt-get install -y postgresql-client
       buildCommands:
         - yarn
         - yarn build
+        - |
+          psql -v ON_ERROR_STOP=1 "host=$DATABASE_HOST port=$DATABASE_PORT user=$DATABASE_USERNAME password=$DATABASE_PASSWORD sslmode=$DATABASE_SSL dbname=postgres" <<-EOSQL
+            SELECT 'CREATE DATABASE "' || '$DATABASE_NAME' || '"'
+            WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '$DATABASE_NAME')\gexec
+          EOSQL
       deploy:
         - ./
     run:
       start: yarn start
+
   - setup: devapi
     build:
       base: nodejs@18
+      prepareCommands:
+        - apt-get update && apt-get install -y postgresql-client
       buildCommands:
         - yarn
+        - |
+          psql -v ON_ERROR_STOP=1 "host=$DATABASE_HOST port=$DATABASE_PORT user=$DATABASE_USERNAME password=$DATABASE_PASSWORD sslmode=$DATABASE_SSL dbname=postgres" <<-EOSQL
+            SELECT 'CREATE DATABASE "' || '$DATABASE_NAME' || '"'
+            WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '$DATABASE_NAME')\gexec
+          EOSQL
       deploy:
         - ./
     run:
+      prepareCommands:
+        - git config --global --add safe.directory /var/www
+        - git config --global user.name "Aleš"
+        - git config --global user.email "ales@zerops.io"
       start: yarn develop

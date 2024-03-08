@@ -14,12 +14,12 @@ services:
   - hostname: db
     type: postgresql@14
     mode: NON_HA
-    priority: 2
+    priority: 10
 
   - hostname: storage
     type: object-storage
     objectStorageSize: 2
-    priority: 1
+    priority: 10
 
   - hostname: prodapi
     type: nodejs@18
@@ -29,6 +29,7 @@ services:
       NODE_ENV: "production"
 
       DATABASE_HOST: "${db_hostname}"
+      DATABASE_CLIENT: "postgres"
       DATABASE_PORT: "${db_port}"
       DATABASE_NAME: "${db_hostname}prod"
       DATABASE_USERNAME: "${db_user}"
@@ -61,6 +62,7 @@ services:
     envSecrets:
       NODE_ENV: "development"
 
+      DATABASE_CLIENT: "postgres"
       DATABASE_HOST: "${db_hostname}"
       DATABASE_PORT: "${db_port}"
       DATABASE_NAME: "${db_hostname}prod"
