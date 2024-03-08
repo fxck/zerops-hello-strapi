@@ -34,6 +34,7 @@ services:
       DATABASE_NAME: "${db_hostname}prod"
       DATABASE_USERNAME: "${db_user}"
       DATABASE_PASSWORD: "${db_password}"
+      DATABASE_SSL: false
 
       S3_BUCKET_NAME: ${storage_bucketName}
       S3_ACCESS_KEY_ID: "${storage_accessKeyId}"
@@ -68,6 +69,7 @@ services:
       DATABASE_NAME: "${db_hostname}prod"
       DATABASE_USERNAME: "${db_user}"
       DATABASE_PASSWORD: "${db_password}"
+      DATABASE_SSL: false
 
       S3_BUCKET_NAME: ${storage_bucketName}
       S3_ACCESS_KEY_ID: "${storage_accessKeyId}"
