@@ -21,6 +21,11 @@ services:
       NODE_ENV: "production"
       HOST: "0.0.0.0"
 
+      ADMIN_NAME: "Your"
+      ADMIN_LASTNAME: "Name"
+      ADMIN_MAIL: "your@mail.com"
+      ADMIN_PASSWORD: <@generateRandomString(<8>)>
+
       DATABASE_HOST: "${db_hostname}"
       DATABASE_CLIENT: "postgres"
       DATABASE_PORT: "${db_port}"
@@ -56,6 +61,11 @@ services:
     envSecrets:
       NODE_ENV: "development"
       HOST: "0.0.0.0"
+
+      ADMIN_NAME: "Your"
+      ADMIN_LASTNAME: "Name"
+      ADMIN_MAIL: "your@mail.com"
+      ADMIN_PASSWORD: <@generateRandomString(<8>)>
 
       DATABASE_CLIENT: "postgres"
       DATABASE_HOST: "${db_hostname}"
