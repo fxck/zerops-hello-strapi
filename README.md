@@ -94,6 +94,7 @@ services:
       minRam: 1
       maxRam: 1
     minContainers: 1
+    maxContainers: 1
 
   - hostname: db
     type: postgresql@14
