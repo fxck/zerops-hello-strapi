@@ -12,7 +12,7 @@ zerops:
             SELECT 'CREATE DATABASE "' || '$DATABASE_NAME' || '"'
             WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '$DATABASE_NAME')\gexec
           EOSQL
-        - npm run strapi admin:create-user -- --firstname=$ADMIN_NAME --lastname=$ADMIN_LASTNAME --email=$ADMIN_MAIL --password=$ADMIN_PASSWORD
+        - npm run strapi admin:create-user -- --firstname="$ADMIN_NAME" --lastname="$ADMIN_LASTNAME" --email="$ADMIN_MAIL" --password="$ADMIN_PASSWORD" 2>/dev/null || true
       deploy:
         - ./
     run:
@@ -34,7 +34,7 @@ zerops:
             SELECT 'CREATE DATABASE "' || '$DATABASE_NAME' || '"'
             WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '$DATABASE_NAME')\gexec
           EOSQL
-        - npm run strapi admin:create-user -- --firstname=$ADMIN_NAME --lastname=$ADMIN_LASTNAME --email=$ADMIN_MAIL --password=$ADMIN_PASSWORD
+        - npm run strapi admin:create-user -- --firstname="$ADMIN_NAME" --lastname="$ADMIN_LASTNAME" --email="$ADMIN_MAIL" --password="$ADMIN_PASSWORD" 2>/dev/null || true
       deploy:
         - ./
     run:
