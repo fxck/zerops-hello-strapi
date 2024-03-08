@@ -70,7 +70,7 @@ services:
       DATABASE_CLIENT: "postgres"
       DATABASE_HOST: "${db_hostname}"
       DATABASE_PORT: "${db_port}"
-      DATABASE_NAME: "${db_hostname}prod"
+      DATABASE_NAME: "${db_hostname}dev"
       DATABASE_USERNAME: "${db_user}"
       DATABASE_PASSWORD: "${db_password}"
       DATABASE_SSL: disable
