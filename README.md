@@ -19,6 +19,7 @@ services:
     enableSubdomainAccess: true
     envSecrets:
       NODE_ENV: "production"
+      HOST: "0.0.0.0"
 
       DATABASE_HOST: "${db_hostname}"
       DATABASE_CLIENT: "postgres"
@@ -54,6 +55,7 @@ services:
     enableSubdomainAccess: true
     envSecrets:
       NODE_ENV: "development"
+      HOST: "0.0.0.0"
 
       DATABASE_CLIENT: "postgres"
       DATABASE_HOST: "${db_hostname}"
