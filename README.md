@@ -24,7 +24,7 @@ services:
       ADMIN_NAME: "Your"
       ADMIN_LASTNAME: "Name"
       ADMIN_MAIL: "your@mail.com"
-      ADMIN_PASSWORD: <@generateRandomString(<8>)>
+      ADMIN_PASSWORD: Aa1<@generateRandomString(<8>)>
 
       DATABASE_HOST: "${db_hostname}"
       DATABASE_CLIENT: "postgres"
@@ -65,7 +65,7 @@ services:
       ADMIN_NAME: "Your"
       ADMIN_LASTNAME: "Name"
       ADMIN_MAIL: "your@mail.com"
-      ADMIN_PASSWORD: <@generateRandomString(<8>)>
+      ADMIN_PASSWORD: Aa1<@generateRandomString(<8>)>
 
       DATABASE_CLIENT: "postgres"
       DATABASE_HOST: "${db_hostname}"
