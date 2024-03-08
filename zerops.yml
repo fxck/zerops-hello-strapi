@@ -13,7 +13,7 @@ zerops:
     build:
       base: nodejs@18
       buildCommands:
-        - yarn i
+        - yarn
       deploy:
         - ./
     run:

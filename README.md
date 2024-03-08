@@ -9,6 +9,7 @@ project:
   tags:
     - hello
     - strapi
+
 services:
   - hostname: db
     type: postgresql@14
