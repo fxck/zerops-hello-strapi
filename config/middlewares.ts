@@ -17,6 +17,7 @@ export default [
   'strapi::errors',
   'strapi::poweredBy',
   'strapi::query',
+  'strapi::cors',
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
