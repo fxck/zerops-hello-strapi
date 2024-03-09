@@ -1,8 +1,6 @@
 # Zerops Hello Strapi
 
-...
-
-## Import yaml
+## Import yaml
 
 ```yaml
 #yamlPreprocessor=on
