@@ -6,8 +6,8 @@ export default [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', '*.storage-prg1.zerops.dev'],
-          'media-src': ["'self'", 'data:', 'blob:', '*.storage-prg1.zerops.dev'],
+          'img-src': ["'self'", 'data:', 'blob:', '*.storage-prg1.zerops.dev', 'storage-prg1.zerops.dev'],
+          'media-src': ["'self'", 'data:', 'blob:', '*.storage-prg1.zerops.dev', 'storage-prg1.zerops.dev'],
           upgradeInsecureRequests: null
         }
       }
